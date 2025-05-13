@@ -1,6 +1,7 @@
 package com.mrh.ticketsdam
 
 import android.icu.text.DateFormat
+import androidx.compose.ui.text.intl.Locale
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -8,6 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
 
 class ListaEventosViewModel : ViewModel() {
 
@@ -58,12 +60,13 @@ class ListaEventosViewModel : ViewModel() {
     }
 
     private fun cargarListaInicial(){
+        val format = SimpleDateFormat("yyyy-MM-dd")
         viewModelScope.launch {
             _lista.value = listOf(
                 Evento(
                     id = 1,
                     nombre = "Debi Tirar Mas Fotos World Tour",
-                    fecha = DateFormat.getDateInstance().parse("2026-05-30"),
+                    fecha = format.parse("2026-05-30"),
                     lugar = "Madrid",
                     categoria = "Concierto",
                     entradas = listOf(
@@ -84,7 +87,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 2,
                     nombre = "Festival de Cine Independiente",
-                    fecha = DateFormat.getDateInstance().parse("2026-06-15"),
+                    fecha = format.parse("2026-06-15"),
                     lugar = "Barcelona",
                     categoria = "Festival",
                     entradas = listOf(
@@ -105,7 +108,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 3,
                     nombre = "Partido de Baloncesto: Lakers vs Celtics",
-                    fecha = DateFormat.getDateInstance().parse("2026-07-10"),
+                    fecha = format.parse("2026-07-10"),
                     lugar = "Los Ángeles",
                     categoria = "Deporte",
                     entradas = listOf(
@@ -132,7 +135,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 4,
                     nombre = "Exposición de Arte Moderno",
-                    fecha = DateFormat.getDateInstance().parse("2026-08-01"),
+                    fecha = format.parse("2026-08-01"),
                     lugar = "París",
                     categoria = "Exposición",
                     entradas = listOf(
@@ -153,7 +156,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 5,
                     nombre = "Obra de Teatro: Hamlet",
-                    fecha = DateFormat.getDateInstance().parse("2026-09-05"),
+                    fecha = format.parse("2026-09-05"),
                     lugar = "Londres",
                     categoria = "Teatro",
                     entradas = listOf(
@@ -174,7 +177,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 6,
                     nombre = "Conferencia de Tecnología: El Futuro de la IA",
-                    fecha = DateFormat.getDateInstance().parse("2026-10-20"),
+                    fecha = format.parse("2026-10-20"),
                     lugar = "San Francisco",
                     categoria = "Conferencia",
                     entradas = listOf(
@@ -195,7 +198,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 7,
                     nombre = "Concierto de Música Clásica: Beethoven Sinfonía No. 9",
-                    fecha = DateFormat.getDateInstance().parse("2026-11-11"),
+                    fecha = format.parse("2026-11-11"),
                     lugar = "Viena",
                     categoria = "Concierto",
                     entradas = listOf(
@@ -216,7 +219,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 8,
                     nombre = "Carrera de Fórmula 1: Gran Premio de Mónaco",
-                    fecha = DateFormat.getDateInstance().parse("2027-05-28"),
+                    fecha = format.parse("2027-05-28"),
                     lugar = "Mónaco",
                     categoria = "Deporte",
                     entradas = listOf(
@@ -237,7 +240,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 9,
                     nombre = "Festival de Jazz de Nueva Orleans",
-                    fecha = DateFormat.getDateInstance().parse("2027-04-28"),
+                    fecha = format.parse("2027-04-28"),
                     lugar = "Nueva Orleans",
                     categoria = "Festival",
                     entradas = listOf(
@@ -258,7 +261,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 10,
                     nombre = "Exposición de Dinosaurios",
-                    fecha = DateFormat.getDateInstance().parse("2027-07-01"),
+                    fecha = format.parse("2027-07-01"),
                     lugar = "Nueva York",
                     categoria = "Exposición",
                     entradas = listOf(
@@ -279,7 +282,7 @@ class ListaEventosViewModel : ViewModel() {
                 Evento(
                     id = 11,
                     nombre = "Musical: El Rey León",
-                    fecha = DateFormat.getDateInstance().parse("2027-08-15"),
+                    fecha = format.parse("2027-08-15"),
                     lugar = "Broadway, Nueva York",
                     categoria = "Teatro",
                     entradas = listOf(
