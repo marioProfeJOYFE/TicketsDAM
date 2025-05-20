@@ -69,12 +69,13 @@ class ListaEventosViewModel : ViewModel() {
                     fecha = format.parse("2026-05-30"),
                     lugar = "Madrid",
                     categoria = "Concierto",
+                    imagen = R.drawable.dtmf,
                     entradas = listOf(
                         Entrada(
                             tipo = "Entrada General",
                             precio = 120.0,
-                            comprada = false,
-                            localidad = "Pista"
+                            comprada = true,
+                            localidad = "Pista",
                         ),
                         Entrada(
                             tipo = "Entrada VIP",

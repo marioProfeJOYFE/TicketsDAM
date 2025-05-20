@@ -8,5 +8,6 @@ data class Evento(
     val entradas: List<Entrada>,
     val lugar : String,
     val fecha: Date,
-    val categoria: String
+    val categoria: String,
+    val imagen: Int = R.drawable.fdcin,
 )
